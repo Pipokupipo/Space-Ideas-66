@@ -50,7 +50,6 @@ h2, h3, p {
     color: rgba(255, 255, 255, 0.8) !important;
 }
 
-/* --- 3. Carousel (สไลด์โชว์หน้าแรก) --- */
 .carousel-item{
     height: 650px;
 }
@@ -84,9 +83,7 @@ h2, h3, p {
 }
 
 /* --- 5. Card Image Fix (Rounded Corners) --- */
-/* *** นี่คือจุดแก้ไขปัญหาหลัก *** */
 .card-img-top {
-  /* *แก้ไข* เปลี่ยน var(--radius) เป็น 20px (ให้เท่ากับ .card) */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   
@@ -250,34 +247,21 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 .gallery-columns {
-    /* นี่คือส่วนสำคัญครับ:
-      - เราบอกให้เบราว์เซอร์พยายามสร้างคอลัมน์ที่มีความกว้าง 300px
-      - เบราว์เซอร์จะคำนวณเองอัตโนมัติว่าในหน้าจอขนาดต่างๆ
-        จะสามารถแสดงได้กี่คอลัมน์ (เช่น จอมือถืออาจได้ 1, แท็บเล็ต 2, จอใหญ่ 4)
-    */
     column-width: 300px;
-    column-gap: 1.5rem; /* ระยะห่างระหว่างคอลัมน์ (ปรับได้ตามชอบ) */
+    column-gap: 1.5rem;
 }
 
 .gallery-item-wrapper {
-    /* - สำคัญมาก: ป้องกันไม่ให้รูปภาพเดียวถูก "ตัดแบ่ง" 
-        เมื่อมันอยู่ตรงรอยต่อระหว่างคอลัมน์
-    */
     break-inside: avoid;
-    margin-bottom: 1.5rem; /* ระยะห่างระหว่างรูปที่อยู่บน-ล่าง */
+    margin-bottom: 1.5rem;
 }
 
 .gallery-item {
-    /* - เพิ่ม cursor: pointer เพื่อให้ผู้ใช้รู้ว่า "คลิกได้"
-      - (class img-fluid และ rounded จาก Bootstrap จะทำงานร่วมกันได้ดี)
-    */
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .gallery-item:hover {
-    /* เพิ่มเอฟเฟกต์เล็กน้อยเมื่อเมาส์ชี้ */
     transform: scale(1.03);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-
 }
